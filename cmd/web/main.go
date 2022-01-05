@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/alexedwards/scs/v2"
-	"github.com/redblue-blur/bookings/pkg/config"
-	"github.com/redblue-blur/bookings/pkg/handlers"
-	"github.com/redblue-blur/bookings/pkg/render"
+	"github.com/redblue-blur/bookings/internal/config"
+	"github.com/redblue-blur/bookings/internal/handlers"
+	"github.com/redblue-blur/bookings/internal/render"
 )
 
 const portno = ":8080"
