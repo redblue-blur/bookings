@@ -1,0 +1,57 @@
+{{template "base" .}}
+{{define "content"}}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <img src="./static/images/majors-suite.png" class="img-fluid img-thumbnail room-images mx-auto d-block" alt="room image">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h1 class="text-center mt-3">Majors Suite</h1>
+      <p>Hotel</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-center">
+      <a id="search-availability" class="btn btn-success">Check availability</a>
+    </div>
+  </div>
+</div>
+{{end}}
+{{define "js"}}
+<script>
+    document.getElementById("search-availability").addEventListener("click",function(){
+      let html= `
+      <form id="check-availability-form" action="" method="post" novalidate class="needs-validation">
+        <div class="row">
+          <div class="col">
+            <div class="row" id="reservation-dates-modal">
+              <div class="col">
+                <input disabled required class="form-control" type="text" name="start" id="start" placeholder="Arrival">
+              </div>
+              <div class="col">
+                <input disabled required class="form-control" type="text" name="end" id="end" placeholder="Departure">
+              </div>
+            </div>  
+          </div>
+        </div>
+      </form>
+    `
+    attention.custom({msg:html,title:"choose dates"})
+    // let myEl =document.getElementById("myParagraph")
+    // if(myEl.classList.contains("redText")){
+    //   myEl.classList.remove("redText")
+    // }else{
+    //   myEl.classList.add("redText")
+    // }
+    // notify("the  colour has been changed","error")
+    // notifyModal("title","<em>hello world<em>","success","My test for the button")
+  })
+  const elem = document.getElementById('reservation-dates')
+    const rangepicker = new DateRangePicker(elem, {
+      format:"dd-mm-yyyy",
+    });
+</script>
+
+{{end}}
