@@ -1,0 +1,10 @@
+mode: set
+github.com/redblue-blur/bookings/cmd/web/main.go:22.13,24.16 2 0
+github.com/redblue-blur/bookings/cmd/web/main.go:28.2,36.16 4 0
+github.com/redblue-blur/bookings/cmd/web/main.go:24.16,26.3 1 0
+github.com/redblue-blur/bookings/cmd/web/main.go:38.18,52.16 10 1
+github.com/redblue-blur/bookings/cmd/web/main.go:57.2,63.12 6 1
+github.com/redblue-blur/bookings/cmd/web/main.go:52.16,55.3 2 0
+github.com/redblue-blur/bookings/cmd/web/middleware.go:17.45,27.2 3 1
+github.com/redblue-blur/bookings/cmd/web/middleware.go:30.50,32.2 1 1
+github.com/redblue-blur/bookings/cmd/web/routes.go:12.49,42.2 18 1
