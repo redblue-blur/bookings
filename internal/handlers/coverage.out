@@ -1,0 +1,22 @@
+mode: set
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:24.47,28.2 1 1
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:31.33,33.2 1 1
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:36.67,41.2 3 1
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:44.68,54.2 5 1
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:57.74,66.2 4 1
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:69.78,71.16 2 1
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:75.2,87.19 6 1
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:98.2,100.66 2 1
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:71.16,74.3 2 0
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:87.19,96.3 4 0
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:105.81,107.9 2 1
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:113.2,118.4 4 0
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:107.9,112.3 4 1
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:122.71,124.2 1 1
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:127.69,129.2 1 1
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:132.75,134.2 1 1
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:137.79,143.2 3 1
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:151.79,157.16 3 1
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:160.2,161.14 2 1
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:157.16,159.3 1 0
+github.com/redblue-blur/bookings/internal/handlers/handlers.go:165.70,167.2 1 1
