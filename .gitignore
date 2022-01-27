@@ -1,1 +1,8 @@
 .vscode
+.idea
+coverage.out
+bookings
+run.sh
+.ds_store
+database.yml
+*.code-workplace
