@@ -10,6 +10,7 @@ import (
 
 	"github.com/alexedwards/scs/v2"
 	"github.com/redblue-blur/bookings/internal/config"
+	"github.com/redblue-blur/bookings/internal/driver"
 	"github.com/redblue-blur/bookings/internal/handlers"
 	"github.com/redblue-blur/bookings/internal/helpers"
 	"github.com/redblue-blur/bookings/internal/models"
@@ -24,11 +25,11 @@ var infoLog *log.Logger
 var errorLog *log.Logger
 
 func main() {
-	err := run()
+	db, err := run()
 	if err != nil {
 		log.Fatal(err)
 	}
-
+	defer db.SQL.Close()
 	fmt.Printf("starting application on port %s", portno)
 
 	srv := &http.Server{
@@ -39,9 +40,12 @@ func main() {
 	err = srv.ListenAndServe()
 	log.Fatal(err)
 }
-func run() error {
+func run() (*driver.DB, error) {
 	//what am i going to put in the session
 	gob.Register(models.Reservation{})
+	gob.Register(models.User{})
+	gob.Register(models.Room{})
+	gob.Register(models.Restriction{})
 	//true if in Production
 	app.InProduction = false
 
@@ -58,18 +62,26 @@ func run() error {
 	session.Cookie.Secure = app.InProduction
 
 	app.Session = session
+	// connect to database
+	log.Println("Connecting to database...")
+	db, err := driver.ConnectSQL("host=localhost port =5432 dbname=bookings user=postgres password=qwerty")
+	if err != nil {
+		log.Fatal("cannot connect to database! Dying...")
+	}
+	log.Println("connected to database!")
+
 	tc, err := render.CreateTemplateCache()
 	if err != nil {
 		log.Fatal("cannot create template cache")
-		return err
+		return nil, err
 	}
 
 	app.TemplateCache = tc
 	app.UseCache = false
 
-	repo := handlers.NewRepo(&app)
+	repo := handlers.NewRepo(&app, db)
 	handlers.NewHandlers(repo)
-	render.NewTemplates(&app)
+	render.NewRenderer(&app)
 	helpers.NewHelpers(&app)
-	return nil
+	return db, nil
 }
