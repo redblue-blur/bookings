@@ -17,7 +17,7 @@ var dbConn = &DB{}
 
 const maxOpenDbConn = 10
 const maxIdleDbConn = 5
-const maxDbLifeTime = 5 * time.Minute
+const maxDbLifetime = 5 * time.Minute
 
 //ConnectSQL creates database pool for postgress
 func ConnectSQL(dsn string) (*DB, error) {
@@ -27,7 +27,7 @@ func ConnectSQL(dsn string) (*DB, error) {
 	}
 	d.SetMaxOpenConns(maxOpenDbConn)
 	d.SetMaxIdleConns(maxIdleDbConn)
-	d.SetConnMaxLifetime(maxDbLifeTime)
+	d.SetConnMaxLifetime(maxDbLifetime)
 
 	dbConn.SQL = d
 
@@ -56,5 +56,5 @@ func NewDatabase(dsn string) (*sql.DB, error) {
 	if err = db.Ping(); err != nil {
 		return nil, err
 	}
-	return db, err
+	return db, nil
 }
